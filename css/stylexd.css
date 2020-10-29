@@ -1,0 +1,218 @@
+.quicksandxd {
+    font-family: 'Quicksand', sans-serif;
+    padding-bottom: -10px;
+}
+
+.ralewayxd {
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.montserratxd {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.robotoxd {
+    font-family: 'Roboto', sans-serif;
+}
+
+.gothicxd {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.quicksandaber {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+.section1, .section2, .section3 {
+    padding-top: 100px;
+    height: 100vh;
+    width: 100%;
+}
+
+.section1 {
+    background-color: rgb(255, 255, 255);
+    display: block;
+}
+
+.section2 {
+    background-color: rgb(255, 255, 255);
+    padding-top: 50px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.section3 {
+    background-color: rgb(255, 255, 255);
+    padding-top: 50px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.header-name {
+    letter-spacing: -1em;
+    padding-top: 1%;
+    top: 87%;
+    margin: auto;
+    /*position: fixed !important; */
+}
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0; }
+
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #9862a8;
+  border-color: #9862a8; }
+  
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: #923dac;
+  border-color: #923dac; }
+
+.button.button-card,
+button.button-card,
+input[type="submit"].button-card,
+input[type="reset"].button-card,
+input[type="button"].button-card {
+color: #4ead45;
+background-color: #ede6f0;
+border-color: #ede6f0;
+transition: 0.1s; }
+
+.button.button-green,
+button.button-green,
+input[type="submit"].button-green,
+input[type="reset"].button-green,
+input[type="button"].button-green {
+font-family: 'Quicksand', sans-serif;
+color: #FFF;
+background-color: #4ead45;
+border-color: #4ead45; 
+transition: 0.3s;}
+
+.button.button-card-green,
+button.button-card-green,
+input[type="submit"].button-card-green,
+input[type="reset"].button-card-green,
+input[type="button"].button-card-green {
+font-family: 'Quicksand', sans-serif;
+color: #4ead45;
+background-color: #fbfbfb;
+border-color: #ffffff; 
+transition: 0.3s;}
+
+.button.button-beige,
+button.button-beige,
+input[type="submit"].button-beige,
+input[type="reset"].button-beige,
+input[type="button"].button-beige {
+font-family: 'Quicksand', sans-serif;
+color: #FFF;
+background-color: #d0d177;
+border-color: #d0d177; }
+
+.button.button-green:hover,
+button.button-green:hover,
+input[type="submit"].button-green:hover,
+input[type="reset"].button-green:hover,
+input[type="button"].button-green:hover,
+.button.button-green:focus,
+button.button-green:focus,
+input[type="submit"].button-green:focus,
+input[type="reset"].button-green:focus,
+input[type="button"].button-green:focus {
+color: #FFF;
+background-color: #2eaa38;
+transition: 0.3s;}
+
+.button.button-card:hover,
+button.button-card:hover,
+input[type="submit"].button-card:hover,
+input[type="reset"].button-card:hover,
+input[type="button"].button-card:hover {
+border-radius: 8px;
+transition: 0.4s;
+}
+
+.button.button-card-green:hover,
+button.button-card-green:hover,
+input[type="submit"].button-card-green:hover,
+input[type="reset"].button-card-green:hover,
+input[type="button"].button-card-green:hover {
+color: #ffffff;
+background-color: #2eaa38;
+border-color: #ffffff; 
+transition: 0.3s;
+}
+
+.button.button-beige:hover,
+button.button-beige:hover,
+input[type="submit"].button-beige:hover,
+input[type="reset"].button-beige:hover,
+input[type="button"].button-beige:hover,
+.button.button-beige:focus,
+button.button-beige:focus,
+input[type="submit"].button-beige:focus,
+input[type="reset"].button-beige:focus,
+input[type="button"].button-beige:focus {
+color: #FFF;
+background-color: #d8e65c;
+border-color: #ffffff; }

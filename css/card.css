@@ -1,0 +1,139 @@
+/*body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+} */
+
+.card {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 170px 170px 80px;
+    grid-template-areas: "image" "text" "footer";
+    font-family: sans-serif;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 2px 2px 8px rgba(109, 104, 104, 0.9);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 7px 7px 16px rgba(109, 104, 104, 0.9);
+    transition: 0.3s;
+}
+
+.card-image {
+    grid-area: image;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    
+}
+
+.card-background-mast {
+    background: url(/images/MAST_Logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 8em; 
+}
+
+.card-background-gandalow {
+    background: url(/images/Gandalow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 8em;
+
+}
+
+.card-background-tortiya {
+    background: url(/images/Tortiya.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 6em;
+
+}
+
+.card-text {
+    grid-area: text;
+    text-align: justify;
+    font-family: 'Quicksand', sans-serif;
+    margin: 25px;
+}
+
+.card-text .date {
+    color: #248567;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.card-text .date:hover {
+    color: #74bba4;
+    transition: 0.3s;
+}
+
+.card-text p {
+    color: gray;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #353d36;
+    text-align: justify;
+    transition: 0.1s;
+}
+
+.card-text h2 {
+    margin-top: 0px;
+    font-size: 26;
+    font-weight: 600;
+    color: #252725;
+    transition: 0.1s;
+}
+
+.card-footer {
+    grid-area: footer;
+    display: grid;
+    background: #ffffff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-footer.footelm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* ---------------- */
+
+.card-simple {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 150px 80px;
+    grid-template-areas: "text" "footer";
+    font-family: sans-serif;
+    border-radius: 5px;
+    background: #55c05e;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card-simple:hover {
+    box-shadow: 7px 7px 16px rgba(109, 104, 104, 0.9);
+    transition: 0.3s;
+}
+
+.card-simple-footer {
+    grid-area: footer;
+    display: grid;
+    background: #55c05e;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    align-items: center;
+    justify-content: center;
+}

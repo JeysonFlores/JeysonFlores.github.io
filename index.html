@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar Test</title>
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/stylexd.css">
+    <link rel="stylesheet" href="/css/card.css">
+    <!-- JS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="/js/script.js"></script>
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/portafolio.png">
+
+</head>
+<body>
+<!-- Navbar -->
+    <header>
+        <a href="#" class="logo gothicxd"><i class="fa fa-connectdevelop"></i> J A F D </a>
+        <ul>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Portfolio">Portfolio</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <li><a href="#Deadpoint" onclick="info()">Credits</a></li>
+        </ul>
+    </header>
+<!-- About Section -->
+
+<section id="About" class="section1">
+  <div class="grid py-6 grid-cols-1 gap-4 justify-items-center h-48">
+    <img class="h-16 mb-8 w-16 md:h-24 md:w-24 rounded-full mx-auto md:mx-0 md:mr-6" src="/images/yo.jpg">
+    <h2 class="quicksandaber text-lg ">  Jeyson Antonio Flores Deras </h2>
+    <h3 class="quicksandaber text-lg text-green-700"> Programmer </h3>
+    <h1 class="quicksandaber text-lg"> I'm a 20yo programmer based in Mexico. I mainly <br>
+      develop in Python and Java, but I also have <br>
+        experience with other languages like Javascript <br>
+        Crystal, Kotlin, Groovy and Lua. I also have <br>
+        have been designing my own graphical resources for <br>
+        some personal and school projects as well. </h1>
+    <button onclick="location.href='https://github.com/JeysonFlores'" class=" ralewayxd button-green" type="button">See my work</button>
+  </div>
+</section> 
+
+<!-- Portfolio Section -->
+<div id="Portfolio" class="grid grid-cols-1 justify-items-center">
+  <h2 class="robotoxd text-lg text-green-600 text-2xl "> Portfolio </h2>
+</div>
+
+<section class="flex section2">
+  
+  <!-- Element 1-->
+  <div class="px-4 py-2 m-2">
+    <div class="card">
+      <div class="card-image card-background-tortiya"></div>
+      <div class="card-text">
+              <span class="date robotoxd"> <i class="fa fa-code"></i> Java </span>
+              <h2 class="montserratxd">TortiYA!</h2>
+              <p>A point of sale-managing system written in Java using Swing as GUI Framework. -School Project-</p>
+      </div>
+      <div class="card-footer">
+          <div class="foot-elm">
+          <button onclick="location.href='https://github.com/JeysonFlores/TortiYa'" class="btn button-card-green quicksandxd" type="button"> See on GitHub <i class="fa fa-github"></i></button>
+      </div>
+      </div>
+    </div>
+  </div>
+    <!-- Element 2-->
+    <div class="px-4 py-2 m-2">
+    <div class="card">
+      <div class="card-image card-background-mast"></div>
+      <div class="card-text">
+              <span class="date robotoxd"><i class="fa fa-code"></i> Python </span>
+              <h2 class="montserratxd">MAST API</h2>
+              <p>An example of an API for a Manager System written in Python and Flask, using SQLAlchemy as ORM and MariaDB as DBM.</p>
+      </div>
+      <div class="card-footer">
+          <div class="foot-elm">
+            <button onclick="location.href='https://github.com/JeysonFlores/MAST-API-REST-Python-'" class="btn button-card-green quicksandxd" type="button"> See on GitHub <i class="fa fa-github"></i></button>
+      </div>
+      </div>
+      </div>
+    </div>
+    <!-- Element 3-->
+    <div class="px-4 py-2 m-2">
+      <div class="card">
+        <div class="card-image card-background-gandalow"></div>
+        <div class="card-text">
+                <span class="date robotoxd"><i class="fa fa-code"></i> Python </span>
+                <h2 class="montserratxd ">Gandalow</h2>
+                <p>Gandalow is a desktop client for the MAST API written in Python and Kivy.</p>
+        </div>
+        <div class="card-footer">
+            <div class="foot-elm">
+              <button onclick="location.href='https://github.com/JeysonFlores/Gandalow'" class="btn button-card-green quicksandxd" type="button"> See on GitHub <i class="fa fa-github"></i></button>
+        </div>
+        </div>
+        </div>
+      </div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<div id="Contact" class="grid grid-cols-1 justify-items-center">
+  <h2 class="robotoxd text-green-600 text-2xl "> Contact </h2>
+</div>
+<section class="flex section3">
+  <!-- Element 1-->
+  <div class="px-2 py-2 m-2">
+    <div class="card-simple text-white">
+      <div class="card-text align-center">
+              <h2  style="text-align: center; color: white;">E-mail</h2>
+              <div class="text-6xl align-center text-white" style="text-align: center;">
+                <i class="fa fa-envelope-open "></i>
+              </div> 
+      </div>
+      <div class="card-simple-footer">
+          <div class="foot-elm ralewayxd">
+            <p style="text-align: center;">jeyson.flores@protonmail.com</p>
+      </div>
+      </div>
+      </div>
+  </div>
+  <!-- Element 2-->
+  <div class="px-2 py-2 m-2">
+    <div class="card-simple text-white">
+      <div class="card-text align-center">
+              <h2  style="text-align: center; color: white;">GitHub</h2>
+              <div class="text-6xl align-center text-white" style="text-align: center;">
+                <i class="fa fa-github "></i>
+              </div> 
+      </div>
+      <div class="card-simple-footer">
+          <div class="foot-elm ralewayxd">
+            <button onclick="location.href='https://github.com/JeysonFlores'" class="btn button-card ralewayxd" type="button"> JeysonFlores ➤</button>
+      </div>
+      </div>
+      </div>
+  </div>
+  <div class="px-2 py-2 m-2">
+    <div class="card-simple text-white">
+      <div class="card-text align-center">
+              <h2  style="text-align: center; color: white;">Linkedin</h2>
+              <div class="text-6xl align-center text-white" style="text-align: center;">
+                <i class="fa fa-linkedin "></i>
+              </div> 
+      </div>
+      <div class="card-simple-footer">
+          <div class="foot-elm ralewayxd">
+            <button onclick="location.href='https://github.com/JeysonFlores'" class="btn button-card ralewayxd" type="button"> Ahumada ➤</button>
+      </div>
+      </div>
+      </div>
+  </div>
+</section>
+</body>
+</html>
