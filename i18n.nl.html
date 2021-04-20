@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "HTML 4.01 Transitional">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>i18n.nl</title>
+
+<link rel="stylesheet" type="text/css" href="newlispdoc.css" />
+</head>
+
+<body style="margin: 20px;" text="#111111" bgcolor="#FFFFFF" 
+            link="#376590" vlink="#551A8B" alink="#ffAA28">
+<blockquote>
+<center><h1>i18n.nl</h1></center>
+<p><a href="index.html">Module index</a></p><br/>
+<h2>Module:&nbsp;i18n.lsp</h2><p>Thin wrapper around GTK.</p>
+ Functions manage memory addresses through a user-provided dictionary.
+<br/><br/>
+ Initialize a state dictionary prior to calling any module functions:
+ <pre>(context MAIN)
+(new Tree 'state)</pre>
+
+<br/><br/><center>&sect;</center><br/>
+<a name="ui_app"></a><h3><font color=#CC0000>ui:app</font></h3>
+<b>syntax: (<font color=#CC0000>ui:app</font> <em>app</em> <em>cb</em>)</b><br/>
+<b>parameter: </b><em>app</em> - <em>string</em> - Name of the application<br/>
+<b>parameter: </b><em>cb</em> - <em>string</em> - Name of the callback function<br/>
+<br/><br/>
+ Create a new Gtk application.
+ <br>When the application is activated, the callback function will be executed.
+
+<br/><br/><center>&sect;</center><br/>
+<a name="ui_window"></a><h3><font color=#CC0000>ui:window</font></h3>
+<b>syntax: (<font color=#CC0000>ui:window</font> <em>window</em> <em>app</em> <em>title</em> <em>width</em> <em>height</em>)</b><br/>
+<b>parameter: </b><em>window</em> - <em>string</em> - Name of the window<br/>
+<b>parameter: </b><em>app</em> - <em>string</em> - Name of the application<br/>
+<b>parameter: </b><em>title</em> - <em>string</em> - Title of the window<br/>
+<b>parameter: </b><em>width</em> - <em>int</em> - Width of the window<br/>
+<b>parameter: </b><em>height</em> - <em>int</em> - Height of the window<br/>
+<br/><br/>
+ Create a new Gtk application window with a title and default size.
+
+<br/><br/><center>&sect;</center><br/>
+<a name="ui_box"></a><h3><font color=#CC0000>ui:box</font></h3>
+<b>syntax: (<font color=#CC0000>ui:box</font> <em>box</em> <em>parent</em> <em>orientation</em>)</b><br/>
+<b>parameter: </b><em>box</em> - <em>string</em> - Name of the button box<br/>
+<b>parameter: </b><em>parent</em> - <em>string</em> - Name of the parent container<br/>
+<b>parameter: </b><em>orientation</em> - <em>string</em> - Horizontal or vertical content organization<br/>
+<br/><br/>
+ Create a new Gtk button box as a child of a parent container.
+ <br>Orientation values are either <em>"h"</em> or <em>"v"</em>.
+
+<br/><br/><center>&sect;</center><br/>
+<a name="ui_button"></a><h3><font color=#CC0000>ui:button</font></h3>
+<b>syntax: (<font color=#CC0000>ui:button</font> <em>button</em> <em>label</em> <em>parent</em> <em>cb</em>)</b><br/>
+<b>parameter: </b><em>button</em> - <em>string</em> - Name of the button<br/>
+<b>parameter: </b><em>label</em> - <em>string</em> - Text of the button's label<br/>
+<b>parameter: </b><em>parent</em> - <em>string</em> - Name of the parent container<br/>
+<b>parameter: </b><em>cb</em> - <em>string</em> - Name of the callback function<br/>
+<b>parameter: </b><em>align</em> - <em>string</em> - Horizontal aligment of the label text<br/>
+<br/><br/>
+ Create a new Gtk button with a label, as a child of a parent container.
+ <br>When the button is pressed, the callback function will be executed.
+ <br>Align values include "left", "center", and "right".
+ <br>Align argument is optional, and will be "center" by default.
+
+<br/><br/><center>&sect;</center><br/>
+<a name="ui_label"></a><h3><font color=#CC0000>ui:label</font></h3>
+<b>syntax: (<font color=#CC0000>ui:label</font> <em>label</em> <em>text</em> <em>parent</em>)</b><br/>
+<b>parameter: </b><em>label</em> - <em>string</em> - Name of the label<br/>
+<b>parameter: </b><em>text</em> - <em>string</em> - Text content of the label<br/>
+<b>parameter: </b><em>parent</em> - <em>string</em> - Name of the parent container<br/>
+<br/><br/>
+ Create a new Gtk label, as a child of a parent container.
+
+<br/><br/><center>&sect;</center><br/>
+<a name="ui_set-label"></a><h3><font color=#CC0000>ui:set-label</font></h3>
+<b>syntax: (<font color=#CC0000>ui:set-label</font> <em>text</em> <em>str</em>)</b><br/>
+<b>parameter: </b><em>text</em> - <em>string</em> - Name of the label<br/>
+<b>parameter: </b><em>str</em> - <em>string</em> - New text content of the label<br/>
+<br/><br/>
+ Modify the text of a label.
+
+<br/><br/><center>&sect;</center><br/>
+<a name="ui_get-button-label"></a><h3><font color=#CC0000>ui:get-button-label</font></h3>
+<b>syntax: (<font color=#CC0000>ui:get-button-label</font> <em>button</em>)</b><br/>
+<b>parameter: </b><em>button</em> - <em>string</em> - Name of the button<br/>
+<p><b>return: </b><em>string</em> - Text content</p>
+ Retrieve a button label's text content.
+
+<br/><br/><center>&sect;</center><br/>
+<a name="ui_set-button-label"></a><h3><font color=#CC0000>ui:set-button-label</font></h3>
+<b>syntax: (<font color=#CC0000>ui:set-button-label</font> <em>button</em> <em>label</em>)</b><br/>
+<b>parameter: </b><em>button</em> - <em>string</em> - Name of the label<br/>
+<b>parameter: </b><em>label</em> - <em>string</em> - New text content of the label<br/>
+<br/><br/>
+ Modify the text of a button's label.
+
+<br/><br/><center>&sect;</center><br/>
+<a name="ui_unref"></a><h3><font color=#CC0000>ui:unref</font></h3>
+<b>syntax: (<font color=#CC0000>ui:unref</font> <em>object</em>)</b><br/>
+<b>parameter: </b><em>object</em> - <em>string</em> - Name of the object<br/>
+<br/><br/>
+ This is typically used to free an application.
+ <br>Decrease the reference count of the GTK object.
+ <br>If the object count drops to 0, free the memory.
+
+<br/><br/><center>&sect;</center><br/>
+<a name="ui_show-all"></a><h3><font color=#CC0000>ui:show-all</font></h3>
+<b>syntax: (<font color=#CC0000>ui:show-all</font> <em>widget</em>)</b><br/>
+<b>parameter: </b><em>widget</em> - <em>string</em> - Name of the widget<br/>
+<br/><br/>
+ Recursively show a widget, including any child widgets.
+
+<br/><br/><center>&sect;</center><br/>
+<a name="ui_run"></a><h3><font color=#CC0000>ui:run</font></h3>
+<b>syntax: (<font color=#CC0000>ui:run</font> <em>app</em>)</b><br/>
+<b>parameter: </b><em>app</em> - <em>string</em> - Name of the application<br/>
+<br/><br/>
+ Run an application.
+
+
+<br/><br/><center>- &part; -</center><br/>
+<center><font face='Arial' size='-2' color='#444444'>
+generated with <a href="http://newlisp.org">newLISP</a>&nbsp;
+and <a href="http://newlisp.org/newLISPdoc.html">newLISPdoc</a>
+</font></center>
+</blockquote>
+</body>
+</html>
