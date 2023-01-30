@@ -1,3 +1,6 @@
-./linux/** linguist-vendored
-./macos/** linguist-vendored
-./web/** linguist-vendored
+./linux/* linguist-vendored
+./linux/flutter/* linguist-vendored
+./macos/* linguist-vendored
+./macos/Flutter/* linguist-vendored
+./macos/Runner/* linguist-vendored
+./web/* linguist-vendored
