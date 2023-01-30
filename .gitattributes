@@ -5,3 +5,6 @@
 ./macos/Flutter/* linguist-vendored
 ./macos/Runner/* linguist-vendored
 ./web/* linguist-vendored
+./docs/* linguist-vendored
+./docs/canvaskit/* linguist-vendored
+./docs/canvaskit/profiling/* linguist-vendored
