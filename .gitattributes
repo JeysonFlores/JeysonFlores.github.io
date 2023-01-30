@@ -1,4 +1,5 @@
 ./linux/* linguist-vendored
+./linux/*.txt linguist-vendored
 ./linux/flutter/* linguist-vendored
 ./macos/* linguist-vendored
 ./macos/Flutter/* linguist-vendored
