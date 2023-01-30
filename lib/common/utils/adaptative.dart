@@ -2,7 +2,7 @@
 import 'package:flutter/widgets.dart';
 
 bool isSmallScreen(BuildContext context) {
-  return (MediaQuery.of(context).size.width < 600);
+  return (MediaQuery.of(context).size.width < 992);
 }
 
 abstract class AdaptativeStatelessWidget extends StatelessWidget {

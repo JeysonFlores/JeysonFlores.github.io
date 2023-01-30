@@ -50868,7 +50868,7 @@ A.vW.prototype={
 N(a){return this.e.$2(a,this.f)}}
 A.oq.prototype={
 N(a){var s,r=null,q=t.w
-if(a.Z(q).f.a.a<600)return A.x1(r,B.I_,r,r,r,r,r,r)
+if(a.Z(q).f.a.a<992)return A.x1(r,B.I_,r,r,r,r,r,r)
 else{s=a.Z(q).f
 return new A.rp(new A.BD(A.a6_(A.a([B.tC,A.x1(r,B.I0,r,B.uz,a.Z(q).f.a.a*0.8,B.yc,r,s.a.a*0.21),new A.y8(1,B.kU,A.x1(r,new A.nc("2",r,r,r,r),B.c8,r,r,r,r,r),r),B.tC],t.d),B.qb),r),r)}}}
 A.An.prototype={
