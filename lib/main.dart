@@ -13,20 +13,18 @@ class PortfolioApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'My Portfolio',
+      title: 'Jeyson Flores Portfolio',
       theme: ThemeData(
         textTheme: const TextTheme(headline1: TextStyle(color: Colors.black87)),
         backgroundColor: paletteBackground,
       ),
-      home: const HomePage(title: 'Flutter Demo Home Page'),
+      home: const HomePage(),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
-
-  final String title;
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -43,25 +41,44 @@ class _HomePageState extends AdaptativeState<HomePage> {
   @override
   Widget buildDesktop(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Row(
           children: <Widget>[
             const SizedBox(width: 100),
             Container(
-              width: MediaQuery.of(context).size.width * 0.21,
-              height: MediaQuery.of(context).size.width * 0.8,
-              margin: const EdgeInsets.only(top: 50),
-              decoration: const BoxDecoration(
-                color: paletteSurface,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(10),
+                width: 250,
+                height: 550,
+                margin: const EdgeInsets.only(top: 50),
+                decoration: const BoxDecoration(
+                  color: paletteSurface,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
                 ),
-              ),
-              child: const Text(
-                "Xddd",
-                style: TextStyle(color: paletteAccent),
-              ),
-            ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network(
+                        "https://raw.githubusercontent.com/JeysonFlores/setaPanel/snippets/rep-resources/seta_logo.png",
+                      ),
+                    ),
+                    const Text("Jeyson Flores"),
+                    const Text("Software Engineer"),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text("GH"),
+                        Text("Linkedin"),
+                        Text("OCC")
+                      ],
+                    )
+                  ],
+                )),
             Expanded(child: Container(color: Colors.blue, child: Text("2"))),
             const SizedBox(width: 100),
           ],
