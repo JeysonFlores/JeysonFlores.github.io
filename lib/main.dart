@@ -48,7 +48,7 @@ class _HomePageState extends AdaptativeState<HomePage> {
           children: <Widget>[
             const SizedBox(width: 100),
             Container(
-                width: 250,
+                width: 350,
                 height: 550,
                 margin: const EdgeInsets.only(top: 50),
                 decoration: const BoxDecoration(
@@ -89,18 +89,18 @@ class _HomePageState extends AdaptativeState<HomePage> {
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 20),
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.only(top: 10, bottom: 10, left: 30, right: 30),
                       decoration: const BoxDecoration(
                         color: paletteBackground,
                         borderRadius: BorderRadius.all(
-                          Radius.circular(15),
+                          Radius.circular(10),
                         ),
                       ),
                       child: const Text(
                         "Software Engineer",
                         style: TextStyle(
                           fontWeight: FontWeight.w300,
-                          fontSize: 11,
+                          fontSize: 12,
                           color: Colors.black87,
                         ),
                       ),
