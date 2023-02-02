@@ -15,6 +15,7 @@ class PortfolioApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Jeyson Flores Portfolio',
       theme: ThemeData(
+        fontFamily: 'Inter',
         textTheme: const TextTheme(headline1: TextStyle(color: Colors.black87)),
         backgroundColor: paletteBackground,
       ),
@@ -55,6 +56,14 @@ class _HomePageState extends AdaptativeState<HomePage> {
                   borderRadius: BorderRadius.all(
                     Radius.circular(10),
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 230, 230, 230),
+                      offset: Offset(0, 4),
+                      blurRadius: 5.0,
+                      spreadRadius: 0.3,
+                    ),
+                  ],
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -62,12 +71,40 @@ class _HomePageState extends AdaptativeState<HomePage> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
-                      child: Image.network(
-                        "https://raw.githubusercontent.com/JeysonFlores/setaPanel/snippets/rep-resources/seta_logo.png",
+                      child: Container(
+                        padding: const EdgeInsets.only(top: 30),
+                        child: Image.asset(
+                          'assets/img/my_avatar_150.png',
+                          scale: 1.25,
+                        ),
                       ),
                     ),
-                    const Text("Jeyson Flores"),
-                    const Text("Software Engineer"),
+                    Container(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: const Text(
+                        "Jeyson Flores",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w300, fontSize: 20),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 20),
+                      padding: const EdgeInsets.all(10),
+                      decoration: const BoxDecoration(
+                        color: paletteBackground,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                      ),
+                      child: const Text(
+                        "Software Engineer",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 11,
+                          color: Colors.black87,
+                        ),
+                      ),
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,

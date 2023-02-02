@@ -1,7 +1,12 @@
 import 'dart:ffi';
 
 class Stage {
-  const Stage({required this.title, required this.institution, required this.date, this.place, this.description});
+  const Stage(
+      {required this.title,
+      required this.institution,
+      required this.date,
+      this.place,
+      this.description});
 
   final String title;
   final String institution;
