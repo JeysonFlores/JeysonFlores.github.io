@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'common/utils/adaptative.dart';
 import 'common/data/palette.dart';
 
@@ -48,8 +51,8 @@ class _HomePageState extends AdaptativeState<HomePage> {
           children: <Widget>[
             const SizedBox(width: 100),
             Container(
-                width: 350,
-                height: 550,
+                width: 300,
+                height: 650,
                 margin: const EdgeInsets.only(top: 50),
                 decoration: const BoxDecoration(
                   color: paletteSurface,
@@ -80,7 +83,7 @@ class _HomePageState extends AdaptativeState<HomePage> {
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.only(top: 10),
+                      padding: const EdgeInsets.only(top: 15),
                       child: const Text(
                         "Jeyson Flores",
                         style: TextStyle(
@@ -89,7 +92,8 @@ class _HomePageState extends AdaptativeState<HomePage> {
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 20),
-                      padding: const EdgeInsets.only(top: 10, bottom: 10, left: 30, right: 30),
+                      padding: const EdgeInsets.only(
+                          top: 10, bottom: 10, left: 25, right: 25),
                       decoration: const BoxDecoration(
                         color: paletteBackground,
                         borderRadius: BorderRadius.all(
@@ -105,14 +109,65 @@ class _HomePageState extends AdaptativeState<HomePage> {
                         ),
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text("GH"),
-                        Text("Linkedin"),
-                        Text("OCC")
-                      ],
+                    Container(
+                      margin: const EdgeInsets.only(top: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(right: 10),
+                            child: CircleAvatar(
+                              backgroundColor: paletteBackground,
+                              radius: 20,
+                              child: IconButton(
+                                padding: EdgeInsets.zero,
+                                icon: const ImageIcon(
+                                  AssetImage("assets/img/github-mark-48.png"),
+                                ),
+                                color: Colors.black87,
+                                onPressed: () async {
+                                  final Uri _url = Uri.parse('https://github.com/JeysonFlores');
+                                  await launchUrl(_url, mode: LaunchMode.externalApplication);
+                                },
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(right: 10),
+                            child: CircleAvatar(
+                              backgroundColor: paletteBackground,
+                              radius: 20,
+                              child: IconButton(
+                                padding: EdgeInsets.zero,
+                                icon: const ImageIcon(
+                                  AssetImage("assets/img/linkedin.png"),
+                                ),
+                                color: Colors.black87,
+                                onPressed: () async {
+                                  final Uri _url = Uri.parse('https://www.linkedin.com/in/jeyson-antonio-flores-deras-1511b4250/');
+                                  await launchUrl(_url, mode: LaunchMode.externalApplication);
+                                },
+                              ),
+                            ),
+                          ),
+                          CircleAvatar(
+                            backgroundColor: paletteBackground,
+                            radius: 20,
+                            child: IconButton(
+                              padding: EdgeInsets.zero,
+                              icon: const ImageIcon(
+                                AssetImage("assets/img/twitter.png"),
+                              ),
+                              color: Colors.black87,
+                              onPressed: () async {
+                                final Uri _url = Uri.parse('https://twitter.com/JeysonF92764691');
+                                await launchUrl(_url, mode: LaunchMode.externalApplication);
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 )),

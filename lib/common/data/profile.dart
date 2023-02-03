@@ -1,5 +1,11 @@
 import '../utils/stage.dart';
 
+final profileLinks = {
+  "github": "https://github.com/JeysonFlores",
+  "linkedin": "https://linkedin.com/JeysonFlores",
+  "occ": "https://occmundial.com.mx/JeysonFlores",
+};
+
 final profileContact = {
   "calendar": "August 30, 2000",
   "place": "Mazatlán, Sinaloa, México",
