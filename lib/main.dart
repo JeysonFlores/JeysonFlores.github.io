@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:portfolio/common/data/profile.dart';
+import 'package:portfolio/common/utils/contact.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'common/utils/adaptative.dart';
 import 'common/data/palette.dart';
@@ -52,7 +54,7 @@ class _HomePageState extends AdaptativeState<HomePage> {
             const SizedBox(width: 100),
             Container(
                 width: 300,
-                height: 650,
+                height: 570,
                 margin: const EdgeInsets.only(top: 50),
                 decoration: const BoxDecoration(
                   color: paletteSurface,
@@ -111,64 +113,12 @@ class _HomePageState extends AdaptativeState<HomePage> {
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.only(right: 10),
-                            child: CircleAvatar(
-                              backgroundColor: paletteBackground,
-                              radius: 20,
-                              child: IconButton(
-                                padding: EdgeInsets.zero,
-                                icon: const ImageIcon(
-                                  AssetImage("assets/img/github-mark-48.png"),
-                                ),
-                                color: Colors.black87,
-                                onPressed: () async {
-                                  final Uri _url = Uri.parse('https://github.com/JeysonFlores');
-                                  await launchUrl(_url, mode: LaunchMode.externalApplication);
-                                },
-                              ),
-                            ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(right: 10),
-                            child: CircleAvatar(
-                              backgroundColor: paletteBackground,
-                              radius: 20,
-                              child: IconButton(
-                                padding: EdgeInsets.zero,
-                                icon: const ImageIcon(
-                                  AssetImage("assets/img/linkedin.png"),
-                                ),
-                                color: Colors.black87,
-                                onPressed: () async {
-                                  final Uri _url = Uri.parse('https://www.linkedin.com/in/jeyson-antonio-flores-deras-1511b4250/');
-                                  await launchUrl(_url, mode: LaunchMode.externalApplication);
-                                },
-                              ),
-                            ),
-                          ),
-                          CircleAvatar(
-                            backgroundColor: paletteBackground,
-                            radius: 20,
-                            child: IconButton(
-                              padding: EdgeInsets.zero,
-                              icon: const ImageIcon(
-                                AssetImage("assets/img/twitter.png"),
-                              ),
-                              color: Colors.black87,
-                              onPressed: () async {
-                                final Uri _url = Uri.parse('https://twitter.com/JeysonF92764691');
-                                await launchUrl(_url, mode: LaunchMode.externalApplication);
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
+                      child: _buildLinkButtons(profileLinks),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 15),
+                      child: _buildContactData(profileContact),
+                    ),
                   ],
                 )),
             Expanded(child: Container(color: Colors.blue, child: Text("2"))),
@@ -176,6 +126,74 @@ class _HomePageState extends AdaptativeState<HomePage> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildLinkButtons(List<Contact> data) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: List.generate(data.length, (index) {
+        return Container(
+          margin: EdgeInsets.only(right: index == (data.length - 1) ? 0 : 10),
+          child: CircleAvatar(
+            backgroundColor: paletteBackground,
+            radius: 20,
+            child: IconButton(
+              padding: EdgeInsets.zero,
+              icon: ImageIcon(
+                AssetImage("assets/img/${data[index].icon}.png"),
+              ),
+              color: Colors.black87,
+              onPressed: () async {
+                final Uri url = Uri.parse(data[index].data);
+                await launchUrl(url, mode: LaunchMode.externalApplication);
+              },
+            ),
+          ),
+        );
+      }),
+    );
+  }
+
+  Widget _buildContactData(List<Contact> data) {
+    return Column(
+      children: List.generate(data.length, (index) {
+        return Container(
+          height: 40,
+          margin: const EdgeInsets.only(top: 10, left: 25, right: 25),
+          decoration: const BoxDecoration(
+            color: paletteBackground,
+            borderRadius: BorderRadius.all(
+              Radius.circular(5),
+            ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.only(right: 10),
+                child: CircleAvatar(
+                  backgroundColor: paletteBackground,
+                  radius: 20,
+                  child: IconButton(
+                    padding: EdgeInsets.zero,
+                    icon: ImageIcon(
+                      AssetImage("assets/img/${data[index].icon}.png"),
+                    ),
+                    color: Colors.black87,
+                    onPressed: null,
+                  ),
+                ),
+              ),
+              SelectableText(
+                data[index].data,
+                style: const TextStyle(fontWeight: FontWeight.w500),
+              ),
+            ],
+          ),
+        );
+      }),
     );
   }
 }
