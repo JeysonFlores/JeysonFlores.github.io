@@ -36,7 +36,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends AdaptativeState<HomePage> {
+class _HomePageState extends AdaptativeScreenState<HomePage> {
   @override
   Widget buildMobile(BuildContext context) {
     return Container(
