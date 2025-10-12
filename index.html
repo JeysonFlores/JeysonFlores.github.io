@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,15 @@
     <script>hljs.highlightAll();</script>
     <script>
         fetch("me.json")
-        .then((data) => data.text())
-        .then((text) => {
-            document.getElementById("content").innerHTML = text;
-        });
+            .then((data) => data.text())
+            .then((text) => {
+                document.getElementById("content").innerHTML = text;
+            });
     </script>
 </head>
+
 <body>
     <pre><code id="content" class="language-json"></code></pre>
 </body>
+
 </html>
