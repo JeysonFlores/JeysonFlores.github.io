@@ -1,0 +1,179 @@
+{
+  "name": "Jeyson Antonio Flores Deras",
+  "short_name": "Jeyson Flores",
+  "preferred_name": "Jeyson",
+  "preferred_last_name": "Flores",
+  "personal_data": {
+    "contact": {
+      "email": "jeysonoknoztop@gmail.com",
+      "github": {
+        "username": "JeysonFlores",
+        "url": "https://github.com/JeysonFlores"
+      },
+      "linkedin": {
+        "url": "https://www.linkedin.com/in/jeyson-antonio-flores-deras-1511b4250/"
+      }
+    },
+    "location": {
+      "city": "Mazatlán",
+      "state": "Sinaloa",
+      "country": "Mexico",
+      "postal_code": "82000"
+    }
+  },
+  "work_experience": [
+    {
+      "company": {
+        "name": "Zillow",
+        "website": "https://www.zillow.com/"
+      },
+      "position": {
+        "title": "Software Development Engineer II",
+        "department": "Applied Science",
+        "mode": "Full-Time"
+      },
+      "location": "Remote",
+      "start_date": "24-07-2025",
+      "end_date": null,
+      "tasks": [
+        "Collaborate with scientists to deploy custom ML models to Databricks",
+        "Integrate third-party events to first-party ML pipelines",
+        "Triage system alerts using Splunk, Grafana & OpsGenie",
+        "Enhancement and development of REST APIs in FastAPI & Python."
+      ],
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "AWS",
+        "Kubernetes",
+        "Databricks",
+        "Splunk",
+        "Grafana",
+        "OpsGenie",
+        "REST",
+        "Git"
+      ]
+    },
+    {
+      "company": {
+        "name": "Samsara",
+        "website": "https://www.samsara.com/"
+      },
+      "position": {
+        "title": "Solutions Integration Engineer II",
+        "department": "Solutions Integration Engineering",
+        "mode": "Full-Time"
+      },
+      "location": "Remote",
+      "start_date": "25-09-2023",
+      "end_date": "21-07-2025",
+      "tasks": [
+        "Part of an elite engineering group dedicated to the development and architecture of enterprise-level integrations and solutions",
+        "Development and design of internal tools that contribute to the improvement of the team’s productivity",
+        "Architecture of solutions based on cloud platforms (AWS, Azure, GCP)",
+        "Development of solutions and integrations using Python and microservices",
+        "Contribute to the enhancements of internal methodologies and processes",
+        "Write high-level documentation for stake-holders and low-level documentation for technical staff"
+      ],
+      "technologies": [
+        "Python",
+        "AWS",
+        "Azure",
+        "GCP",
+        "S3",
+        "Lambda",
+        "Microservices",
+        "Linux",
+        "REST",
+        "Git"
+      ]
+    },
+    {
+      "company": {
+        "name": "EnvíoClick",
+        "website": "https://www.envioclick.com/mx"
+      },
+      "position": {
+        "title": "Backend Developer",
+        "department": "Product",
+        "mode": "Full-Time"
+      },
+      "location": "Remote",
+      "start_date": "28-09-2022",
+      "end_date": "25-09-2023",
+      "tasks": [
+        "Severless microservices development in Python (AWS Lambdas) using SQL(MySQL) and NoSQL(Redis, DynamoDB) databases and other AWS products(S3, API Gateway, RDS, SQS, Cloudwatch)",
+        "Development of third-party REST/SOAP/XML-RPC APIs integrations for e-commerce and payment processing platforms",
+        "Design and development of REST APIs in Python and PHP"
+      ],
+      "technologies": [
+        "Python",
+        "Flask",
+        "SQLAlchemy",
+        "PHP",
+        "Laravel",
+        "AWS",
+        "S3",
+        "Lambda",
+        "Microservices",
+        "Redis",
+        "DynamoDB",
+        "CloudWatch",
+        "API Gateway",
+        "SOAP",
+        "REST",
+        "Git"
+      ]
+    },
+    {
+      "company": {
+        "name": "DerasInmobiliaria",
+        "website": "https://derasinmobiliaria.com"
+      },
+      "position": {
+        "title": "Founding Software Engineer",
+        "department": "Infrastructure",
+        "mode": "Contractor"
+      },
+      "location": "Remote",
+      "start_date": "21-08-2020",
+      "end_date": "29-08-2022",
+      "tasks": [
+        "Design and development of web modules for digital marketing",
+        "Development of Data analysis modules using Python(Flask, SQLAlchemy) and SQL Databases",
+        "Configuration and management of Linux servers",
+        "Development of real-time notification modules using real-time solutions(Apache Kafka, RabbitMQ, Socket.io)",
+        "Design and development of Microservices in Go"
+      ],
+      "technologies": [
+        "Python",
+        "Flask",
+        "SQLAlchemy",
+        "Apache Kafka",
+        "RabbitMQ",
+        "Socket.io",
+        "Linux",
+        "Docker",
+        "Go",
+        "Git"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": {
+        "name": "Universidad Autónoma de Sinaloa",
+        "website": "https://www.uas.edu.mx/"
+      },
+      "degree": "Bachelor's Degree",
+      "field_of_study": "Systems Engineering",
+      "start_year": "2018",
+      "end_year": "2022",
+      "location": {
+        "city": "Mazatlán",
+        "state": "Sinaloa",
+        "country": "Mexico"
+      }
+    }
+  ]
+}
