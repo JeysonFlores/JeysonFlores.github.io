@@ -172,10 +172,25 @@
   "education": [
     {
       "institution": {
+        "name": "Universidad Internacional de La Rioja",
+        "website": "https://unir.net/"
+      },
+      "degree": "Master's of Science (MSc)",
+      "field_of_study": "Quantum Computing",
+      "start_year": "2026",
+      "end_year": null,
+      "location": {
+        "city": "Logroño",
+        "region": "La Rioja",
+        "country": "Spain"
+      }
+    },
+    {
+      "institution": {
         "name": "Universidad Autónoma de Sinaloa",
         "website": "https://www.uas.edu.mx/"
       },
-      "degree": "Bachelor's Degree",
+      "degree": "Bachelor of Engineering (BE)",
       "field_of_study": "Systems Engineering",
       "start_year": "2018",
       "end_year": "2022",
