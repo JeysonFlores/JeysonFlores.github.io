@@ -3,9 +3,10 @@
   "short_name": "Jeyson Flores",
   "preferred_name": "Jeyson",
   "preferred_last_name": "Flores",
+  "subtitle": "Quantum Computing Engineer ",
   "personal_data": {
     "contact": {
-      "email": "jeysonoknoztop [at] gmail [dot] com",
+      "email": "jeysonoknoztop@gmail.com",
       "github": {
         "username": "JeysonFlores",
         "url": "https://github.com/JeysonFlores"
@@ -199,6 +200,23 @@
         "state": "Sinaloa",
         "country": "Mexico"
       }
+    }
+  ],
+  "publications": [
+    {
+      "authors": [
+        "Jeyson Antonio Flores Deras"
+      ],
+      "title": "Implementation of an Optimized High-Level Version of the BB84 Protocol",
+      "magazine": {
+        "name": "ReCIBE",
+        "website": "https://recibe.cucei.udg.mx/index.php/ReCIBE",
+        "institution": "Universidad de Guadalajara"
+      },
+      "link": "https://recibe.cucei.udg.mx/index.php/ReCIBE/article/view/agentes_aplicado/279",
+      "volume": 15,
+      "page": "11-35",
+      "published_date": 2026
     }
   ],
   "context_clues": [
