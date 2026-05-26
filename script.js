@@ -26,7 +26,7 @@ function renderProfile(data) {
   const { short_name, subtitle, personal_data } = data;
   const { contact, location } = personal_data;
 
-  document.getElementById("navbar-name").textContent = short_name;
+  document.getElementById("navbar-name").textContent = "Curriculum Vitae";
   document.getElementById("profile-name").textContent = short_name;
   document.getElementById("footer-name").textContent = `© ${new Date().getFullYear()} ${short_name}`;
   document.title = short_name;
@@ -209,8 +209,8 @@ function renderPublications(publications, authorName) {
 
     item.innerHTML = `
       <div class="pub-title">${pub.title}</div>
-      <div class="pub-authors">${authorsHtml}</div>
-      <div class="pub-meta">
+      <div class="pub-authors">Authored by: ${authorsHtml}</div>
+      <div class="pub-meta">Published in: 
         ${magazineLink}${institutionPart}
         ${year}
         ${volume}
