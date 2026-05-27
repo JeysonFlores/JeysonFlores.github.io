@@ -45,7 +45,7 @@ function renderProfile(data) {
 
   const linksEl = document.getElementById("profile-links");
 
-  const locationStr = [location.city, location.state || location.region, location.country]
+  const locationStr = [location.city, location.country]
     .filter(Boolean).join(", ");
 
   const links = [
@@ -237,12 +237,7 @@ function renderPublications(publications, authorName) {
     item.innerHTML = `
       <div class="pub-title">${pub.title}</div>
       <div class="pub-authors">Authored by: ${authorsHtml}</div>
-      <div class="pub-meta">Published in: 
-        ${magazineLink}${institutionPart}
-        ${year}
-        ${volume}
-        ${pages}
-      </div>
+      <div class="pub-meta">Published in: ${magazineLink}${institutionPart} ${year} ${volume} ${pages}</div>
       ${downloadButton}
     `;
 
