@@ -144,12 +144,24 @@ function renderExperience(experience) {
 
     const dept = exp.position.department ? ` · ${exp.position.department}` : "";
 
+    const hasDetails = (exp.tasks && exp.tasks.length) || (exp.technologies && exp.technologies.length);
+
     const tasks = exp.tasks && exp.tasks.length
       ? `<ul class="task-list">${exp.tasks.map(t => `<li>${t}</li>`).join("")}</ul>`
       : "";
 
     const tags = exp.technologies && exp.technologies.length
       ? `<div class="tag-list">${exp.technologies.map(t => `<span class="tag">${t}</span>`).join("")}</div>`
+      : "";
+
+    const collapseChevron = `<svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>`;
+
+    const collapseToggle = hasDetails
+      ? `<button class="collapse-toggle" aria-expanded="false">Details ${collapseChevron}</button>`
+      : "";
+
+    const collapseBody = hasDetails
+      ? `<div class="collapse-body"><div class="collapse-inner">${tasks}${tags}</div></div>`
       : "";
 
     item.innerHTML += `
@@ -159,11 +171,20 @@ function renderExperience(experience) {
       </div>
       <div class="timeline-subtitle">${companyLink}<span style="color:var(--muted-fg)">${dept}</span></div>
       <div class="timeline-meta">${exp.location} · ${exp.position.mode}</div>
-      ${tasks}
-      ${tags}
+      ${collapseToggle}
+      ${collapseBody}
     `;
 
     list.appendChild(item);
+  });
+
+  // Wire up toggle buttons after all items are in the DOM
+  list.querySelectorAll(".collapse-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!expanded));
+      btn.closest(".timeline-item").querySelector(".collapse-body").classList.toggle("open", !expanded);
+    });
   });
 }
 
