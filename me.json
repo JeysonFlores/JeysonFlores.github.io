@@ -7,9 +7,15 @@
   "personal_data": {
     "contact": {
       "email": "jeysonoknoztop@gmail.com",
+      "institution_email": {
+        "unir": "jeysonantonio.f2676@comunidadunir.net"
+      },
       "github": {
         "username": "JeysonFlores",
         "url": "https://github.com/JeysonFlores"
+      },
+      "orcid": {
+        "url": "https://orcid.org/0000-0001-9615-4714"
       },
       "linkedin": {
         "url": "https://www.linkedin.com/in/jeyson-antonio-flores-deras-1511b4250/"
