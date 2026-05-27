@@ -208,22 +208,7 @@
       }
     }
   ],
-  "publications": [
-    {
-      "authors": [
-        "Jeyson Antonio Flores Deras"
-      ],
-      "title": "Implementation of an Optimized High-Level Version of the BB84 Protocol",
-      "magazine": {
-        "name": "ReCIBE",
-        "website": "https://recibe.cucei.udg.mx/index.php/ReCIBE",
-        "institution": "Universidad de Guadalajara"
-      },
-      "link": "https://recibe.cucei.udg.mx/index.php/ReCIBE/article/view/agentes_aplicado/279",
-      "volume": 15,
-      "published_date": 2026
-    }
-  ],
+  "publications": [],
   "context_clues": [
     {
       "setup": [

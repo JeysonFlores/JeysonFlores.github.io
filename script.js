@@ -11,11 +11,16 @@ const icons = {
 /* ── Date formatters ── */
 function formatDate(dateStr) {
   const [day, month, year] = dateStr.split("-");
-  return new Date(+year, +month - 1, +day).toLocaleDateString("en-US", { month: "short", year: "numeric" });
+  return new Date(+year, +month - 1, +day).toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+  });
 }
 
 function formatPeriod(start, end) {
-  return end ? `${formatDate(start)} – ${formatDate(end)}` : `${formatDate(start)} – Present`;
+  return end
+    ? `${formatDate(start)} – ${formatDate(end)}`
+    : `${formatDate(start)} – Present`;
 }
 
 function formatYears(start, end) {
@@ -29,7 +34,8 @@ function renderProfile(data) {
 
   document.getElementById("navbar-name").textContent = "Curriculum Vitae";
   document.getElementById("profile-name").textContent = short_name;
-  document.getElementById("footer-name").textContent = `© ${new Date().getFullYear()} ${short_name}`;
+  document.getElementById("footer-name").textContent =
+    `© ${new Date().getFullYear()} ${short_name}`;
   document.title = short_name;
 
   // Subtitle from JSON
@@ -46,7 +52,8 @@ function renderProfile(data) {
   const linksEl = document.getElementById("profile-links");
 
   const locationStr = [location.city, location.country]
-    .filter(Boolean).join(", ");
+    .filter(Boolean)
+    .join(", ");
 
   const links = [
     {
@@ -116,7 +123,9 @@ function renderEducation(education) {
       : `<span class="timeline-subtitle">${edu.institution.name}</span>`;
 
     const loc = edu.location;
-    const locationStr = [loc.city, loc.state || loc.region, loc.country].filter(Boolean).join(", ");
+    const locationStr = [loc.city, loc.state || loc.region, loc.country]
+      .filter(Boolean)
+      .join(", ");
 
     item.innerHTML += `
       <div class="timeline-header">
@@ -150,15 +159,19 @@ function renderExperience(experience) {
 
     const dept = exp.position.department ? ` · ${exp.position.department}` : "";
 
-    const hasDetails = (exp.tasks && exp.tasks.length) || (exp.technologies && exp.technologies.length);
+    const hasDetails =
+      (exp.tasks && exp.tasks.length) ||
+      (exp.technologies && exp.technologies.length);
 
-    const tasks = exp.tasks && exp.tasks.length
-      ? `<ul class="task-list">${exp.tasks.map(t => `<li>${t}</li>`).join("")}</ul>`
-      : "";
+    const tasks =
+      exp.tasks && exp.tasks.length
+        ? `<ul class="task-list">${exp.tasks.map((t) => `<li>${t}</li>`).join("")}</ul>`
+        : "";
 
-    const tags = exp.technologies && exp.technologies.length
-      ? `<div class="tag-list">${exp.technologies.map(t => `<span class="tag">${t}</span>`).join("")}</div>`
-      : "";
+    const tags =
+      exp.technologies && exp.technologies.length
+        ? `<div class="tag-list">${exp.technologies.map((t) => `<span class="tag">${t}</span>`).join("")}</div>`
+        : "";
 
     const collapseChevron = `<svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>`;
 
@@ -189,7 +202,10 @@ function renderExperience(experience) {
     btn.addEventListener("click", () => {
       const expanded = btn.getAttribute("aria-expanded") === "true";
       btn.setAttribute("aria-expanded", String(!expanded));
-      btn.closest(".timeline-item").querySelector(".collapse-body").classList.toggle("open", !expanded);
+      btn
+        .closest(".timeline-item")
+        .querySelector(".collapse-body")
+        .classList.toggle("open", !expanded);
     });
   });
 }
@@ -210,13 +226,18 @@ function renderPublications(publications, authorName) {
     const item = document.createElement("div");
     item.className = "pub-item";
 
-    const authorsHtml = pub.authors.map((author) => {
-      const isMe = authorName.toLowerCase().includes(author.split(" ")[0].toLowerCase()) ||
-        author.toLowerCase().includes(authorName.split(" ")[0].toLowerCase());
-      return isMe
-        ? `<span class="author-highlight">${author}</span>`
-        : `<span>${author}</span>`;
-    }).join(", ");
+    const authorsHtml = pub.authors
+      .map((author) => {
+        const isMe =
+          authorName
+            .toLowerCase()
+            .includes(author.split(" ")[0].toLowerCase()) ||
+          author.toLowerCase().includes(authorName.split(" ")[0].toLowerCase());
+        return isMe
+          ? `<span class="author-highlight">${author}</span>`
+          : `<span>${author}</span>`;
+      })
+      .join(", ");
 
     // Magazine with hyperlink + institution without hyperlink
     const magazineName = pub.magazine.name || pub.magazine;
@@ -224,9 +245,13 @@ function renderPublications(publications, authorName) {
     const magazineLink = magazineWebsite
       ? `<a href="${magazineWebsite}" target="_blank" rel="noopener noreferrer">${magazineName} ${icons.externalLink}</a>`
       : `<span>${magazineName}</span>`;
-    const institutionPart = pub.magazine.institution ? `<span> - ${pub.magazine.institution}</span>` : "";
+    const institutionPart = pub.magazine.institution
+      ? `<span> - ${pub.magazine.institution}</span>`
+      : "";
 
-    const year = pub.published_date ? `<span>(${pub.published_date})</span>` : "";
+    const year = pub.published_date
+      ? `<span>(${pub.published_date})</span>`
+      : "";
     const volume = pub.volume ? `<span>Vol. ${pub.volume}</span>` : "";
     const pages = pub.page ? `<span>pp. ${pub.page}</span>` : "";
 

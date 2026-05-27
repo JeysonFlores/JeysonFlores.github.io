@@ -40,7 +40,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   font-size: 15px;
   line-height: 1.6;
   color: var(--fg);
@@ -91,7 +91,9 @@ a:hover {
   background: transparent;
   color: var(--muted-fg);
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 }
 
 .theme-toggle:hover {
@@ -353,7 +355,10 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: 999px;
   cursor: pointer;
-  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    background 0.15s,
+    border-color 0.15s;
   font-family: inherit;
 }
 
@@ -379,7 +384,7 @@ a:hover {
   transition: grid-template-rows 0.25s ease;
 }
 
-.collapse-body>* {
+.collapse-body > * {
   min-height: 0;
 }
 
@@ -405,7 +410,7 @@ a:hover {
 }
 
 .task-list li::before {
-  content: '–';
+  content: "–";
   color: var(--primary);
   flex-shrink: 0;
   margin-top: 0.05rem;
@@ -435,7 +440,7 @@ a:hover {
   transition: background 0.15s;
 }
 
-.pub-item+.pub-item {
+.pub-item + .pub-item {
   margin-top: 0.25rem;
 }
 
