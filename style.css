@@ -277,6 +277,19 @@ a:hover {
   gap: 1.75rem;
 }
 
+.timeline-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-group .timeline-item {
+  padding-bottom: 1.75rem;
+}
+
+.timeline-group .timeline-item:last-child {
+  padding-bottom: 0;
+}
+
 .timeline-item {
   position: relative;
   padding-left: 1.25rem;
@@ -284,7 +297,8 @@ a:hover {
   transition: border-color 0.2s;
 }
 
-.timeline-item:hover {
+.timeline-item:hover,
+.timeline-group:hover .timeline-item {
   border-left-color: var(--primary);
 }
 
@@ -431,7 +445,11 @@ a:hover {
   background: var(--tag-bg);
   color: var(--tag-fg);
 }
-
+.tag:hover {
+  background: var(--primary);
+  color: var(--primary-fg);
+  transition: background 0.15s, color 0.15s;
+}
 /* ── Publications ── */
 .pub-item {
   padding: 0.75rem 0.75rem;

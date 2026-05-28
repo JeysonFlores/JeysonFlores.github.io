@@ -129,11 +129,10 @@ function renderEducation(education) {
 
     item.innerHTML += `
       <div class="timeline-header">
-        <span class="timeline-title">${edu.degree}</span>
+        <span class="timeline-title">${edu.degree} - ${edu.field_of_study}</span>
         <span class="timeline-date">${formatYears(edu.start_year, edu.end_year)}</span>
       </div>
       ${institutionLink}
-      <div class="timeline-meta">${edu.field_of_study}</div>
       <div class="timeline-meta" style="opacity:0.7">${locationStr}</div>
     `;
 
@@ -145,56 +144,82 @@ function renderEducation(education) {
 function renderExperience(experience) {
   const list = document.getElementById("experience-list");
 
+  const groups = [];
   experience.forEach((exp) => {
-    const item = document.createElement("div");
-    item.className = "timeline-item";
+    if (
+      groups.length > 0 &&
+      groups[groups.length - 1][0].company.name === exp.company.name
+    ) {
+      groups[groups.length - 1].push(exp);
+    } else {
+      groups.push([exp]);
+    }
+  });
 
-    const dot = document.createElement("div");
-    dot.className = "timeline-dot";
-    item.appendChild(dot);
+  groups.forEach((group) => {
+    const groupEl = document.createElement("div");
+    groupEl.className = "timeline-group";
 
-    const companyLink = exp.company.website
-      ? `<a href="${exp.company.website}" target="_blank" rel="noopener noreferrer">${exp.company.name} ${icons.externalLink}</a>`
-      : exp.company.name;
+    group.forEach((exp, index) => {
+      const item = document.createElement("div");
+      item.className = "timeline-item";
 
-    const dept = exp.position.department ? ` · ${exp.position.department}` : "";
+      const dot = document.createElement("div");
+      dot.className = "timeline-dot";
+      item.appendChild(dot);
 
-    const hasDetails =
-      (exp.tasks && exp.tasks.length) ||
-      (exp.technologies && exp.technologies.length);
+      const companyLink = exp.company.website
+        ? `<a href="${exp.company.website}" target="_blank" rel="noopener noreferrer">${exp.company.name} ${icons.externalLink}</a>`
+        : exp.company.name;
 
-    const tasks =
-      exp.tasks && exp.tasks.length
-        ? `<ul class="task-list">${exp.tasks.map((t) => `<li>${t}</li>`).join("")}</ul>`
+      const dept = exp.position.department
+        ? ` · ${exp.position.department}`
         : "";
 
-    const tags =
-      exp.technologies && exp.technologies.length
-        ? `<div class="tag-list">${exp.technologies.map((t) => `<span class="tag">${t}</span>`).join("")}</div>`
+      const hasDetails =
+        (exp.tasks && exp.tasks.length) ||
+        (exp.technologies && exp.technologies.length);
+
+      const tasks =
+        exp.tasks && exp.tasks.length
+          ? `<ul class="task-list">${exp.tasks.map((t) => `<li>${t}</li>`).join("")}</ul>`
+          : "";
+
+      const tags =
+        exp.technologies && exp.technologies.length
+          ? `<div class="tag-list">${exp.technologies.map((t) => `<span class="tag">${t}</span>`).join("")}</div>`
+          : "";
+
+      const collapseChevron = `<svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>`;
+
+      const collapseToggle = hasDetails
+        ? `<button class="collapse-toggle" aria-expanded="false">Details ${collapseChevron}</button>`
         : "";
 
-    const collapseChevron = `<svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>`;
+      const collapseBody = hasDetails
+        ? `<div class="collapse-body"><div class="collapse-inner">${tasks}${tags}</div></div>`
+        : "";
 
-    const collapseToggle = hasDetails
-      ? `<button class="collapse-toggle" aria-expanded="false">Details ${collapseChevron}</button>`
-      : "";
+      const subtitleHtml =
+        index === 0
+          ? `<div class="timeline-subtitle">${companyLink}<span style="color:var(--muted-fg)">${dept}</span></div>`
+          : `<div class="timeline-subtitle" style="color:var(--muted-fg)">${dept ? dept.substring(3) : ""}</div>`;
 
-    const collapseBody = hasDetails
-      ? `<div class="collapse-body"><div class="collapse-inner">${tasks}${tags}</div></div>`
-      : "";
+      item.innerHTML += `
+        <div class="timeline-header">
+          <span class="timeline-title">${exp.position.title}</span>
+          <span class="timeline-date">${formatPeriod(exp.start_date, exp.end_date)}</span>
+        </div>
+        ${subtitleHtml}
+        <div class="timeline-meta">${exp.location} · ${exp.position.mode}</div>
+        ${collapseToggle}
+        ${collapseBody}
+      `;
 
-    item.innerHTML += `
-      <div class="timeline-header">
-        <span class="timeline-title">${exp.position.title}</span>
-        <span class="timeline-date">${formatPeriod(exp.start_date, exp.end_date)}</span>
-      </div>
-      <div class="timeline-subtitle">${companyLink}<span style="color:var(--muted-fg)">${dept}</span></div>
-      <div class="timeline-meta">${exp.location} · ${exp.position.mode}</div>
-      ${collapseToggle}
-      ${collapseBody}
-    `;
+      groupEl.appendChild(item);
+    });
 
-    list.appendChild(item);
+    list.appendChild(groupEl);
   });
 
   // Wire up toggle buttons after all items are in the DOM
