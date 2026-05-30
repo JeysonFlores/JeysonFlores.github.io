@@ -448,7 +448,9 @@ a:hover {
 .tag:hover {
   background: var(--primary);
   color: var(--primary-fg);
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 }
 /* ── Publications ── */
 .pub-item {

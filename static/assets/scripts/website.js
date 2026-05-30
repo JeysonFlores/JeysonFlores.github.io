@@ -316,7 +316,7 @@ function initTheme() {
 }
 
 /* ── Bootstrap ── */
-fetch("me.json")
+fetch("static/data/me.json")
   .then((res) => {
     if (!res.ok) throw new Error("Could not load me.json");
     return res.json();

@@ -25,7 +25,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <script>
-        fetch("me.json")
+        fetch("static/data/me.json")
             .then((data) => data.text())
             .then((text) => {
                 document.getElementById("content").innerHTML = text;
