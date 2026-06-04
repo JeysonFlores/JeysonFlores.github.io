@@ -550,6 +550,9 @@ a:hover {
   margin: 0 -0.75rem;
   border-radius: var(--radius);
   transition: background 0.15s;
+  border-color: var(--primary);
+  border-width: 0.5px;
+  border-style: dotted;
 }
 
 .pub-item + .pub-item {
