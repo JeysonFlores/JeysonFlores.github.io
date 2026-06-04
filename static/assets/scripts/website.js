@@ -270,25 +270,42 @@ function renderPublications(publications, authorName) {
     const magazineLink = magazineWebsite
       ? `<a href="${magazineWebsite}" target="_blank" rel="noopener noreferrer">${magazineName} ${icons.externalLink}</a>`
       : `<span>${magazineName}</span>`;
-    const institutionPart = pub.magazine.institution
-      ? `<span> - ${pub.magazine.institution}</span>`
-      : "";
+    const institutioName = pub.institution.name || pub.institution;
+    const institutionWebsite = pub.institution.website || pub.institution.link;
+    const institutionLink = institutioName
+      ? `<a href="${institutionWebsite}" target="_blank" rel="noopener noreferrer">${institutioName} ${icons.externalLink}</a>`
+      : `<span>${institutioName}</span>`;;
 
     const year = pub.published_date
-      ? `<span>(${pub.published_date})</span>`
+      ? `<span class="pub-year">${pub.published_date}</span>`
       : "";
     const volume = pub.volume ? `<span>Vol. ${pub.volume}</span>` : "";
     const pages = pub.page ? `<span>pp. ${pub.page}</span>` : "";
 
-    const downloadButton = pub.link
-      ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="download-button">Download PDF</a>`
-      : "";
+    const researchAreasBadges =
+      pub.areas_of_research && pub.areas_of_research.length > 0
+        ? `<div class="pub-research-badges">${pub.areas_of_research
+            .map((area) => `<span class="research-tag">${area}</span>`)
+            .join("")}</div>`
+        : "";
+
+    const titleLink = pub.link
+      ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="pub-title-link">${pub.title}</a>`
+      : pub.title;
+
+    const metaItems = [magazineLink, institutionLink, year].filter(Boolean);
 
     item.innerHTML = `
-      <div class="pub-title">${pub.title}</div>
-      <div class="pub-authors">Authored by: ${authorsHtml}</div>
-      <div class="pub-meta">Published in: ${magazineLink}${institutionPart} ${year} ${volume} ${pages}</div>
-      ${downloadButton}
+      <div class="pub-header">
+        <div class="pub-title">${titleLink}</div>
+        ${researchAreasBadges}
+      </div>
+      <div class="pub-authors">${authorsHtml}</div>
+      <div class="pub-meta">
+        <div class="meta-item">${metaItems[0] || ""}</div>
+        <div class="meta-item">${metaItems[1] || ""}</div>
+        <div class="meta-item">${metaItems[2] || ""}</div>
+      </div>
     `;
 
     list.appendChild(item);
