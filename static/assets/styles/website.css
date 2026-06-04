@@ -513,10 +513,10 @@ a:hover {
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.01em;
-  background: rgba(var(--primary-rgb), 0.8);
-  color: var(--primary-fg);
+  background: var(--bg);
+  color: var(--primary);
+  border: 1px solid rgba(var(--primary-rgb), 0.3);
   text-transform: none;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .pub-research-badges {
