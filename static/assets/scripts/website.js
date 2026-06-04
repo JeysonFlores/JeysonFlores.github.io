@@ -265,13 +265,13 @@ function renderPublications(publications, authorName) {
       .join(", ");
 
     // Magazine with hyperlink + institution without hyperlink
-    const magazineName = pub.magazine.name || pub.magazine;
-    const magazineWebsite = pub.magazine.website || pub.link;
+    const magazineName = pub.magazine.name || null;
+    const magazineWebsite = pub.magazine.website || pub.magazine.link || null;
     const magazineLink = magazineWebsite
       ? `<a href="${magazineWebsite}" target="_blank" rel="noopener noreferrer">${magazineName} ${icons.externalLink}</a>`
       : `<span>${magazineName}</span>`;
-    const institutioName = pub.institution.name || pub.institution;
-    const institutionWebsite = pub.institution.website || pub.institution.link;
+    const institutioName = pub.institution.name || null;
+    const institutionWebsite = pub.institution.website || pub.institution.link || null;
     const institutionLink = institutioName
       ? `<a href="${institutionWebsite}" target="_blank" rel="noopener noreferrer">${institutioName} ${icons.externalLink}</a>`
       : `<span>${institutioName}</span>`;;
@@ -293,8 +293,6 @@ function renderPublications(publications, authorName) {
       ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer" class="pub-title-link">${pub.title}</a>`
       : pub.title;
 
-    const metaItems = [magazineLink, institutionLink, year].filter(Boolean);
-
     item.innerHTML = `
       <div class="pub-header">
         <div class="pub-title">${titleLink}</div>
@@ -302,9 +300,9 @@ function renderPublications(publications, authorName) {
       </div>
       <div class="pub-authors">${authorsHtml}</div>
       <div class="pub-meta">
-        <div class="meta-item">${metaItems[0] || ""}</div>
-        <div class="meta-item">${metaItems[1] || ""}</div>
-        <div class="meta-item">${metaItems[2] || ""}</div>
+        ${(magazineName !== null) ? "<div class=\"meta-item\">" + magazineLink + "</div>" : ""}
+        ${(institutioName !== null) ? "<div class=\"meta-item\">" + institutionLink + "</div>" : ""}
+        ${(pub.published_date !== null) ? "<div class=\"meta-item\">" + year + "</div>" : ""}
       </div>
     `;
 
