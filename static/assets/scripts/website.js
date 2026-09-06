@@ -29,8 +29,10 @@ function formatYears(start, end) {
 
 /* ── Render: Profile ── */
 function renderProfile(data) {
-  const { short_name, subtitle, personal_data } = data;
+  const { short_name, subtitle_options, personal_data } = data;
   const { contact, location } = personal_data;
+
+  const urlParams = new URLSearchParams(window.location.search);
 
   document.getElementById("navbar-name").textContent = "Curriculum Vitae";
   document.getElementById("profile-name").textContent = short_name;
@@ -38,12 +40,13 @@ function renderProfile(data) {
     `© ${new Date().getFullYear()} ${short_name}`;
   document.title = short_name;
 
-  // Subtitle from JSON
+  // Subtitle option from Path 
   const subtitleEl = document.getElementById("profile-subtitle");
-  if (subtitle) {
-    subtitleEl.textContent = subtitle;
+  if (urlParams.has('version')) {
+    decodedTitle = atob(urlParams.get('version'));
+    subtitle_options[decodedTitle] ? subtitleEl.textContent = subtitle_options[decodedTitle] : subtitleEl.textContent = subtitle_options['default'];
   } else {
-    subtitleEl.style.display = "none";
+    subtitleEl.textContent = subtitle_options['default'];
   }
 
   const emailRaw = contact.email;
