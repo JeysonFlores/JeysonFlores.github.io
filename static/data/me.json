@@ -3,7 +3,13 @@
     "short_name": "Jeyson Flores",
     "preferred_name": "Jeyson",
     "preferred_last_name": "Flores",
-    "subtitle": "Quantum Computing Engineer",
+    "subtitle_options": {
+        "1": "Quantum Computing Engineer",
+        "2": "Senior Software Engineer",
+        "3": "Senior Forward Deployed Engineer",
+        "4": "Senior AI Engineer",
+        "default": "Software Engineer"
+    },
     "personal_data": {
         "contact": {
             "email": "jeysonoknoztop@gmail.com",
